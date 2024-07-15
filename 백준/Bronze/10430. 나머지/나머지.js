@@ -1,9 +1,7 @@
 const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
-const a = parseInt(input[0]);
-const b = parseInt(input[1]);
-const c = parseInt(input[2]);
+const [A, B, C] = input.map(Number);
 
-console.log((a + b) % c);
-console.log(((a % c) + (b % c)) % c);
-console.log((a * b) % c);
-console.log(((a % c) * (b % c)) % c);
+console.log((A + B) % C);
+console.log(((A % C) + (B % C)) % C);
+console.log((A * B) % C);
+console.log(((A % C) * (B % C)) % C);
