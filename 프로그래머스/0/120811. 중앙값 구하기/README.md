@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 0.04 ms
+메모리: 33.5 MB, 시간: 0.07 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 07월 02일 12:03:19
+2024년 07월 16일 22:29:45
 
 ### 문제 설명
 
@@ -27,14 +27,14 @@
 <h5>제한사항</h5>
 
 <ul>
-<li><code>array</code>의 길이는 홀수입니다.</li>
-<li>0 &lt; <code>array</code>의 길이 &lt; 100</li>
-<li>-1,000 &lt; <code>array</code>의 원소 &lt; 1,000</li>
+<li><code><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">array</span></code><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">의 길이는 홀수입니다.</span></li>
+<li><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">0 &lt; </span><code><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">array</span></code><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">의 길이 &lt; 100</span></li>
+<li><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">-1,000 &lt; </span><code><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">array</span></code><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">의 원소 &lt; 1,000</span></li>
 </ul>
 
 <hr>
 
-<h5>입출력 예</h5>
+<h5><span data-id="c4f5bd83-5b5b-4545-924b-9fb492a8e237" class="monica-mark monica-mark-c4f5bd83-5b5b-4545-924b-9fb492a8e237" style="background-color: rgba(250, 255, 10, 0.447); cursor: pointer;">입출력 예</span></h5>
 <table class="table">
         <thead><tr>
 <th>array</th>
