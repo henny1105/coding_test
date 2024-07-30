@@ -1,9 +1,16 @@
 const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
-const a = Number(input[0]);
-const b = Number(input[1]);
+let h = Number(input[0]);
+let m = Number(input[1]);
 
-if (b < 45) {
-	console.log(a === 0 ? 23 : a - 1, b + 15);
-} else {
-	console.log(a, b - 45);
+const arr = [h, m - 45];
+
+if (arr[1] < 0) {
+	arr[0] -= 1;
+	arr[1] = 60 + arr[1];
 }
+
+if (arr[0] < 0) {
+	arr[0] = 23;
+}
+
+console.log(arr.join(' '));
