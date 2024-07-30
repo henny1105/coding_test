@@ -1,9 +1,11 @@
 const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-const nums = input.map(Number);
-const remainders = new Set();
+const num = input.map(Number);
+let result = [];
 
-for (let i = 0; i < nums.length; i++) {
-	let divide = nums[i] % 42;
-	remainders.add(divide);
+for (let i = 0; i < num.length; i++) {
+	result.push(num[i] % 42);
 }
-console.log(remainders.size);
+
+result = [...new Set(result)].length;
+
+console.log(result);
