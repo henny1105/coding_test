@@ -1,21 +1,29 @@
 const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-const n = Number(input[0]);
+
+let num = Number(input[0]);
 let arr = [];
 
-for (let i = 1; i <= n; i++) {
+for (let i = 1; i <= num; i++) {
 	arr.push(input[i]);
 }
 
-arr = [...new Set(arr)];
+let set = new Set(arr);
+let uniqueArr = [...set];
 
-arr.sort((a, b) => {
-	if (a.length === b.length) {
-		return a.localeCompare(b);
-	} else {
+uniqueArr.sort((a, b) => {
+	if (a.length != b.length) {
 		return a.length - b.length;
+	} else {
+		if (a < b) {
+			return -1;
+		} else if (a > b) {
+			return 1;
+		} else {
+			return 0;
+		}
 	}
 });
 
-arr.forEach((item) => {
-	console.log(item);
+uniqueArr.forEach((el) => {
+	console.log(el);
 });
