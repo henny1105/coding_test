@@ -1,17 +1,17 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 
-const num = Number(input[0]);
-const arr = [];
+let num = Number(input[0]);
+let arr = [];
 
 for (let i = 1; i <= num; i++) {
-	arr.push(input[i].split(' '));
+	let [age, name] = input[i].split(' ');
+	arr.push([Number(age), name]);
 }
-
 arr.sort((a, b) => {
-	if (a[0] != b[0]) {
+	if (a[0] !== b[0]) {
 		return a[0] - b[0];
 	} else {
-		return a[1] - b[1];
+		return 0;
 	}
 });
 
