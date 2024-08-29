@@ -1,5 +1,15 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().split(' ');
-const s = input[0].trim().split('');
-const sr = input[0].trim().split('').reverse();
+const input = require('fs')
+	.readFileSync('/dev/stdin')
+	.toString()
+	.trim()
+	.split('\n')
+	.map((line) => line.replace('\r', ''));
 
-console.log(s.join('') === sr.join('') ? 1 : 0);
+let word = input[0];
+let wordReverse = word.split('').reverse().join('');
+
+if (word === wordReverse) {
+	console.log(1);
+} else {
+	console.log(0);
+}
