@@ -1,31 +1,29 @@
 function solution(answers) {
-    let a = [1, 2, 3, 4, 5];
-    let b = [2, 1, 2, 3, 2, 4, 2, 5];
-    let c = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5];
+    const patterns = [
+        [1, 2, 3, 4, 5],
+        [2, 1, 2, 3, 2, 4, 2, 5],
+        [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    ]
     
-    let countA = 0;
-    let countB = 0;
-    let countC = 0;
+    const scores = [0,0,0];
     
-    for(let i = 0; i < answers.length; i++) {
-        if(answers[i] === a[i % a.length]) {
-            countA++;
-        }
-        if(answers[i] === b[i % b.length]) {
-            countB++;
-        }
-        if(answers[i] === c[i % c.length]) {
-            countC++;
+    for(const [i, answer] of answers.entries()) {
+        for(const [j, pattern] of patterns.entries()) {
+            if(answer === pattern[i % pattern.length]) {
+                scores[j] += 1;
+            }
         }
     }
     
-
-    let maxCount = Math.max(countA, countB, countC);
-    let result = [];
+    const maxScore = Math.max(...scores);
     
-    if (countA === maxCount) result.push(1);
-    if (countB === maxCount) result.push(2);
-    if (countC === maxCount) result.push(3);
-
-    return result;
+    let highestScores = [];
+    
+    for(let i = 0; i < scores.length; i++) {
+        if(scores[i] === maxScore) {
+            highestScores.push(i + 1);
+        }
+    }
+    
+    return highestScores;
 }
