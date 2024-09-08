@@ -7,12 +7,8 @@ function solution(my_string, is_prefix) {
     }
     
     for(let j= 0;j< length; j++){
-        if(arr[j] === is_prefix) {
-            return 1;
-        }
+        console.log(arr[j]);
     }
-    
-    return 0;
 
 
 }
