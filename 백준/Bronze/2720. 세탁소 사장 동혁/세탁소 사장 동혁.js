@@ -1,24 +1,21 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-let n = Number(input[0]);
-let nums = [];
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
+let input = fs.readFileSync(filePath).toString().trim().split('\n').map(Number);
 
-for (let i = 1; i <= n; i++) {
-	nums.push(Number(input[i]));
-}
+const change = [25, 10, 5, 1];
+const num = Number(input[0]);
+let result = [];
 
-let denominations = [25, 10, 5, 1];
-let results = [];
-
-for (let num of nums) {
-	let result = [];
-	for (let i = 0; i < denominations.length; i++) {
-		let count = Math.floor(num / denominations[i]);
-		result.push(count);
-		num -= count * denominations[i];
+for (let i = 1; i <= num; i++) {
+	let money = input[i];
+	let changeArr = [];
+	for (let j = 0; j < change.length; j++) {
+		changeArr.push(Math.floor(money / change[j]));
+		money %= change[j];
 	}
-	results.push(result);
+	result.push(changeArr);
 }
 
-results.forEach((el) => {
-	console.log(el.join(' '));
-});
+for (let i = 0; i < num; i++) {
+	console.log(result[i].join(' '));
+}
