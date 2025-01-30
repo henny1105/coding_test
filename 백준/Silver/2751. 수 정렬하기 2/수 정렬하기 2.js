@@ -1,11 +1,8 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-let num = Number(input[0]);
-let arr = [];
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
+let input = fs.readFileSync(filePath).toString().trim().split('\n').map(Number);
 
-for (let i = 1; i <= num; i++) {
-	arr.push(Number(input[i]));
-}
-
+let arr = input.slice(1);
 arr.sort((a, b) => a - b);
 
 console.log(arr.join('\n'));
