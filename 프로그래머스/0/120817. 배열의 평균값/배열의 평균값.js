@@ -1,8 +1,9 @@
 function solution(numbers) {
-    let sum = numbers.reduce((acc, cur) => acc + cur);
-    let numbersLength = numbers.length; 
+    let num = 0;
     
-    let result = sum / numbersLength;
+    for(let i = 0; i < numbers.length; i++) {
+        num += numbers[i];
+    }
     
-    return result;
+    return num / numbers.length;
 }
