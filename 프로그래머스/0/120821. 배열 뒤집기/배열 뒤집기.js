@@ -1,9 +1,5 @@
 function solution(num_list) {
-     let answer = [];
+    const reverseArr = [...num_list].reverse();
     
-    for (let i = num_list.length - 1; i >= 0; i--) {
-        answer.push(num_list[i]);
-    }
-    
-    return answer;
+    return reverseArr;
 }
