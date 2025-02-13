@@ -1,13 +1,10 @@
 function solution(my_string) {
-    let numbers = [];
+    let arr = my_string.replace(/[^0-9]/g, '');
+    let result = [];
     
-    for (let char of my_string) {
-        if (!isNaN(char) && char !== ' ') {
-            numbers.push(Number(char));
-        }
+    for(let i = 0; i < arr.length; i++) {
+        result.push(Number(arr[i]));
     }
     
-    numbers.sort((a,b) => a-b);
-    
-    return numbers;
+    return result.sort((a,b) => a-b);
 }
