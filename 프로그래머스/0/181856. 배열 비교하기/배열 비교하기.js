@@ -1,23 +1,22 @@
 function solution(arr1, arr2) {
-    let arr1Len = arr1.length;
-    let arr2Len = arr2.length;
+    let arr1Length = arr1.length;
+    let arr2Length = arr2.length;
     
-    let arr1Sum = arr1.reduce((acc, cur) => acc + cur);
-    let arr2Sum = arr2.reduce((acc, cur) => acc + cur);
-    
-    if(arr1Len > arr2Len) {
+    if(arr1Length > arr2Length) {
         return 1;
-    }else if(arr2Len > arr1Len) {
+    }else if(arr1Length < arr2Length) {
         return -1;
-    }
-    
-    if(arr2Len === arr1Len) {
+    }else if(arr1Length === arr2Length) {
+        let arr1Sum = arr1.reduce((acc, cur) => acc + cur, 0);
+        let arr2Sum = arr2.reduce((acc, cur) => acc + cur, 0);
+        
         if(arr1Sum > arr2Sum) {
-            return 1;
-        }else if(arr2Sum > arr1Sum) {
-            return -1;
-        }else {
+            return 1
+        }else if(arr1Sum < arr2Sum) {
+            return -1
+        }else if(arr1Sum === arr2Sum) {
             return 0;
         }
     }
+    
 }
