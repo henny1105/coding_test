@@ -1,15 +1,21 @@
 function solution(s){
-    let arr = s.toLowerCase().split('');
-    let p_len = 0;
-    let y_len = 0;
+    let arr = s.toLowerCase();
+    let result = 0;
+    let result2 = 0;
     
     for(let i = 0; i < arr.length; i++) {
-        if(arr[i] === "p") {
-            p_len++;
-        }else if(arr[i] === "y") {
-            y_len++;
-        }
+       if(arr[i] === "p") {
+           result ++;
+       }else if(arr[i] === "y") {
+           result2 ++;
+       }
     }
     
-    return p_len === y_len ? true : false;
+    if(result === result2) {
+        return true;
+    }else if(result !== result2) {
+        return false;
+    }else {
+        return true;
+    }
 }
