@@ -1,3 +1,7 @@
 function solution(num) {
-    return num % 2 === 0 ? "Even" : "Odd";
+    if(num % 2 === 0) {
+        return "Even";
+    }else {
+        return "Odd";
+    }
 }
