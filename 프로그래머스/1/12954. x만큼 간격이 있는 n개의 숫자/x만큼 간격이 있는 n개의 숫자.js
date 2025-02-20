@@ -1,9 +1,9 @@
 function solution(x, n) {
-    let arr = [];
-
+    let result = [];
+    
     for(let i = 1; i <= n; i++) {
-        arr.push(x * i);
+        result.push(x * i)
     }
     
-    return arr;
+    return result;
 }
