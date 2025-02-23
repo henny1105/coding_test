@@ -1,10 +1,6 @@
 function solution(arr) {
-    const min = Math.min(...arr);
-    const result = arr.filter(item => item !== min);
+    let min = Math.min(...arr);
+    let array = arr.filter(num => num !== min);
     
-    if(result.length === 0) {
-        return [-1];
-    }
-    
-    return result;
+    return array.length === 0 ? [-1] : array;
 }
