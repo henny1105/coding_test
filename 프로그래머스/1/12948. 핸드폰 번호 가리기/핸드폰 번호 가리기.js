@@ -1,11 +1,6 @@
 function solution(phone_number) {
-    let num = phone_number.length;
-    let last = phone_number.slice(-4);
-    let star = '';
-        
-    for(let i = 0; i < num - 4; i++) {
-        star += '*';
-    }
+    let star = '*'.repeat(phone_number.length - 4);
+    let number = phone_number.slice(-4);
     
-    return star.concat(last)
+    return star + number;
 }
