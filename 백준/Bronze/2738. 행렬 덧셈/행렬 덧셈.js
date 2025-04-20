@@ -1,24 +1,19 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-const [N, M] = input[0].split(' ').map(Number);
-const a = [];
-const b = [];
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
+let input = fs
+	.readFileSync(filePath)
+	.toString()
+	.trim()
+	.split('\n')
+	.map((line) => line.split(' ').map(Number));
 
-for (let i = 1; i <= N; i++) {
-	a.push(input[i].split(' ').map(Number));
-}
+let [n, m] = input[0];
 
-for (let k = N + 1; k < input.length; k++) {
-	b.push(input[k].split(' ').map(Number));
-}
-
-let result = Array.from(Array(N), () => Array(M).fill(0));
-
-for (let i = 0; i < N; i++) {
-	for (let j = 0; j < M; j++) {
-		result[i][j] = a[i][j] + b[i][j];
+for (let i = 0; i < n; i++) {
+	let result = [];
+	for (let j = 0; j < m; j++) {
+		const sum = input[i + 1][j] + input[i + 1 + n][j];
+		result.push(sum);
 	}
-}
-
-for (let i = 0; i < N; i++) {
-	console.log(result[i].join(' '));
+	console.log(result.join(' '));
 }
