@@ -1,23 +1,18 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-const heights = input.map(Number);
-const totalHeight = heights.reduce((sum, height) => sum + height, 0);
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
+let input = fs.readFileSync(filePath).toString().trim().split('\n').map(Number);
 
-let found = false;
-const result = [];
+let total = input.reduce((a, b) => a + b, 0);
 
-for (let i = 0; i < heights.length; i++) {
-	for (let j = i + 1; j < heights.length; j++) {
-		if (totalHeight - heights[i] - heights[j] === 100) {
-			for (let k = 0; k < heights.length; k++) {
-				if (k !== i && k !== j) {
-					result.push(heights[k]);
-				}
-			}
+for (let i = 0; i < input.length; i++) {
+	for (let j = i + 1; j < input.length; j++) {
+		if (total - input[i] - input[j] === 100) {
+			let result = input.filter((val, idx) => idx !== i && idx !== j);
+
 			result.sort((a, b) => a - b);
-			console.log(result.join('\n'));
-			found = true;
-			break;
+			result.forEach((el) => console.log(el));
+
+			process.exit();
 		}
 	}
-	if (found) break;
 }
