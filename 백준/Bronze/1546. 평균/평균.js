@@ -1,9 +1,19 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-const N = Number(input[0]);
-const scores = input[1].split(' ').map(Number);
-const maxScore = Math.max(...scores);
-const newScores = scores.map((score) => (score / maxScore) * 100);
-const sumNewScores = newScores.reduce((sum, score) => sum + score, 0);
-const newAverage = sumNewScores / N;
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
+let input = fs
+	.readFileSync(filePath)
+	.toString()
+	.trim()
+	.split('\n')
+	.map((line) => line.split(' ').map(Number));
 
-console.log(newAverage.toFixed(2));
+let n = input[0];
+let arr = input[1];
+let max = Math.max(...arr);
+let result = 0;
+
+for (let i = 0; i < n; i++) {
+	result += ((arr[i] / max) * 100) / n;
+}
+
+console.log(result);
