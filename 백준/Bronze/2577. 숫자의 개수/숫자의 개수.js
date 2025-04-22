@@ -1,19 +1,14 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-const num = input.length;
-let result = 1;
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : 'example.txt';
+let input = fs.readFileSync(filePath).toString().trim().split('\n').map(Number);
 
-for (let i = 0; i < num; i++) {
-	result *= input[i];
+let [a, b, c] = input;
+let sum = (a * b * c).toString();
+let result = Array(10).fill(0);
+
+for (let i = 0; i < sum.length; i++) {
+	let numSum = Number(sum[i]);
+	result[numSum]++;
 }
 
-const resultString = result.toString();
-let count = Array(10).fill(0);
-
-for (let j = 0; j < resultString.length; j++) {
-	const digit = resultString[j];
-	count[Number(digit)] += 1;
-}
-
-for (let i = 0; i < count.length; i++) {
-	console.log(count[i]);
-}
+result.forEach((el) => console.log(el));
