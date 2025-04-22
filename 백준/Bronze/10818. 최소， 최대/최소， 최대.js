@@ -1,4 +1,9 @@
-const input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-const arr = input[1].split(' ').map(Number);
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 
-console.log(Math.min(...arr), Math.max(...arr));
+let num = Number(input[0]);
+let data = input[1].split(' ').map((x) => Number(x));
+
+let min = data.reduce((a, b) => Math.min(a, b));
+let max = data.reduce((a, b) => Math.max(a, b));
+
+console.log(min, max);
